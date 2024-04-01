@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Dm5Xia9/DSI/oracle/manifest.json",
+  "$schema": "https://raw.githubusercontent.com/Dm5Xia9/DSI/oracle/manifest2.json",
   "type": "object",
   "properties": {
     "schemaVersion": {
