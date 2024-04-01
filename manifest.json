@@ -1,73 +1,89 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "https://raw.githubusercontent.com/Dm5Xia9/DSI/oracle/manifest.json",
   "type": "object",
   "properties": {
     "schemaVersion": {
-      "type": "integer"
+      "description": "Версия схемы",
+      "type": "number",
+      "exclusiveMinimum": 0
     },
     "id": {
+      "description": "Идентификатор сервиса",
       "type": "string"
     },
     "version": {
+      "description": "Версия сервиса",
       "type": "string"
     },
     "name": {
+      "description": "Человеко-читаемое имя сервиса",
       "type": "string"
     },
     "description": {
+      "description": "Описание сервиса",
       "type": "string"
     },
     "icon": {
+      "description": "Иконка. Используйте префикс # для определения пути внутри внешнего хранилища",
       "type": "string"
     },
     "network": {
+      "description": "Сетевые параметры сервиса",
       "type": "object",
       "properties": {
         "domain": {
+          "description": "Домен сервиса",
           "type": "string"
         },
         "path": {
+          "description": "Относительный путь внутри этого домена",
           "type": "string"
         },
         "swagger": {
+          "description": "путь до сваггера",
           "type": "string"
         }
       },
       "required": [
         "domain",
         "path",
-        "swagger"
       ]
     },
     "depends": {
+      "description": "внешние зависимости сервиса",
       "type": "object",
       "properties": {
-        "user-hub": {
+        "serviceName": {
+          "description": "Версия",
           "type": "string"
         }
-      },
-      "required": [
-        "user-hub"
-      ]
+      }
     },
     "entrypoints": {
+      "description": "Входные точки сервиса",
       "type": "object",
       "additionalProperties": {
+        "description": "Параметры входной точки",
         "type": "object",
         "properties": {
           "module": {
+            "description": "Идентификатор модуля используемый входной точкой",
             "type": "string"
           },
           "path": {
+            "description": "Внешний http путь к входной точке",
             "type": "string"
           },
           "name": {
+            "description": "Человеко-читаемое название входной точки",
             "type": "string"
           },
           "icon": {
+            "description": "Иконка. Используйте префикс # для определения пути внутри внешнего хранилища",
             "type": "string"
           },
           "policy": {
+            "description": "Политика доступа к входной точке",
             "type": "string"
           }
         },
@@ -80,7 +96,6 @@
     "id",
     "version",
     "name",
-    "description",
     "icon",
     "network",
     "depends",
