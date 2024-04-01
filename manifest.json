@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "swagger": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "path",
+        "swagger"
+      ]
+    },
+    "depends": {
+      "type": "object",
+      "properties": {
+        "user-hub": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "user-hub"
+      ]
+    },
+    "entrypoints": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "policy": {
+            "type": "string"
+          }
+        },
+        "required": ["module", "path", "name", "icon"]
+      }
+    
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "description",
+    "icon",
+    "network",
+    "depends",
+    "entrypoints"
+  ]
+}
